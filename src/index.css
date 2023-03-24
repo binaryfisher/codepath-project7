@@ -1,0 +1,64 @@
+#root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body, html{
+  margin: 0;
+  padding: 0;
+  
+  width: 100vw; 
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+
+
+.all-content{
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  grid-template-columns: 1fr 9fr;
+  
+}
+
+.nav-bar{
+  display: flex;
+  height: 100vh;
+  padding-top: 50px;
+  gap: 15px;
+  background-color: #534f4f;
+  flex-direction: column;
+}
+
+a:link{
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+ 
+}
+
+a:link {color:#FFFAFA;}     
+a:visited {color:#FFFAFA;} 
+a:hover {color:#b6adad;}  
+a:active {color:#cfc5c5;} 
+
