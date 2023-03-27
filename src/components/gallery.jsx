@@ -36,7 +36,7 @@ const Gallery = () =>{
                          <div >Value of Crewmate: {element.value}</div>
                          <div >Type of Crewmate: {element.type}</div>
                      </div>
-                     <button className="gallery-card-button"><Link to="/gallery/id">Edit Crewmate</Link></button>
+                     <button className="gallery-card-button"><Link to= {"/gallery/" + btoa(element.id)}>Edit Crewmate</Link></button>
                    </div>
                  ))
             ):(null)}
