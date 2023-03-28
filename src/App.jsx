@@ -32,7 +32,7 @@ function App() {
           </Route>
 
           <Route path='/'  element={ <NavBar />}>
-            <Route path="/gallery/:id" index={false} element={<Update />} />
+            <Route path="/gallery/:id/edit" index={false} element={<Update />} />
           </Route>
         
         </Routes>

@@ -3,9 +3,13 @@ import React, { useState } from "react";
 import { supabase } from '../client'
 import { useEffect } from "react";
 import { BrowserRouter, Route, Link, Routes} from 'react-router-dom'
+
+
+
 const Gallery = () =>{
 
     const [allCrewmates, setAllCrewmates] = useState(null);
+    const [deleteACrewmate, setDeleteACrewmate] = useState(false);
 
     useEffect(()=> {
         const fetchData = async() => {
@@ -19,9 +23,21 @@ const Gallery = () =>{
         fetchData();
       
 
-    },[])
+    },[deleteACrewmate]);
 
-   
+    const handleDeleteBtn = (event) => {
+        let id = event.target.id;
+        deleteCrewmate(id);
+        setDeleteACrewmate(false);
+    }
+
+   const deleteCrewmate = async(id) =>{
+        await supabase
+            .from("Crewmates")
+            .delete()
+            .match({"id": id})
+        setDeleteACrewmate(true);    
+   }
 
 
 
@@ -30,20 +46,26 @@ const Gallery = () =>{
 
             {allCrewmates && allCrewmates.length > 0 ? (
                  allCrewmates.map((element, index) => (
-                   <div key={index} className="gallery-card">
+                   <div key={index}  className="gallery-card">
                      <div className="gallery-card-attr">
-                         <div >Name of Crewmate: {element.name}</div>
-                         <div >Value of Crewmate: {element.value}</div>
-                         <div >Type of Crewmate: {element.type}</div>
+                         <div >Name: {element.name}</div>
+                         <div >Value: {element.value}</div>
+                         <div >Type: {element.type}</div>
                      </div>
-                     <button className="gallery-card-button"><Link to= {"/gallery/" + btoa(element.id)}>Edit Crewmate</Link></button>
+                     <div className="gallery-card-buttons">
+                         <button className="gallery-card-button"><Link to= {"/gallery/" + btoa(element.id) + "/edit"}>Edit</Link></button>
+                         <button className="gallery-card-button" id={element.id} onClick={handleDeleteBtn}>Delete</button>
+                     </div>
                    </div>
                  ))
-            ):(null)}
+            ):(
+                "There are no crewmates here"
+            )}
            
         </div>
     )
 }
+
 
 
 export default Gallery;

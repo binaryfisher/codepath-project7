@@ -151,8 +151,9 @@ button:hover{
 .gallery-card{
   background-color: #eee7e7;
   box-shadow: 1px 1px 6px 2px #b6adad;
-  width: 200px;
-  height: 200px;
+  padding: 10px;
+  width: 180px;
+  height: 180px;
   text-align: left;
   border-radius: 8px;
   display: flex;
@@ -162,9 +163,33 @@ button:hover{
   cursor: pointer;
 
 }
+.gallery-card-attr{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+ 
+}
 
+.gallery-card-attr div{
+  
+ display: flex;
+ width:150px;
+ justify-content: left;
+ 
+ 
+}
+
+
+.input-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .inform-box{ 
+  font-size: 12px;
+  font-weight: 700;
   margin-top: 20px;
   width: 300px;
   height: 40px;
@@ -187,4 +212,35 @@ button:hover{
   transform: scaleX(0);
   transform: scaleY(0);
   transition: all 1s ease-out;
+}
+
+.update-page{
+  display: flex;
+  flex-direction: column;
+}
+
+.update-page-attr-card{
+
+  width: 260px;
+  height: 180px;
+  border-radius: 8px;
+  padding: 10px 20px;
+  align-self: center;
+  box-shadow: 2px 2px 5px 5px grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+
+.gallery-card-buttons{
+  display: flex;
+  gap: 10px;
+}
+.gallery-card-button{
+  padding: 0;
+  width: 80px;
+  height: 30px;
+  text-align: center;
 }

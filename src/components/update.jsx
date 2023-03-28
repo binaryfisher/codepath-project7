@@ -1,9 +1,15 @@
 import { useParams } from "react-router-dom";
 import { supabase } from '../client'
 import { useEffect, useState } from "react";
+import InputForm from "./inputForm";
+
 const Update = () =>{
     let {id} = useParams();
-    const [currentCrewmate, setCurrentCrewmate] = useState({})
+    const [currentCrewmate, setCurrentCrewmate] = useState({});
+
+    const handleBtnClick = ()=>{
+
+    }
     
     useEffect(()=> {
         const fetchData = async() => {
@@ -23,8 +29,13 @@ const Update = () =>{
         <div className="update-page">
             <h1>Update Your Crewmate</h1>
             <h2>Current crewmate info:</h2>
-            <h4>{"name: " + currentCrewmate.name }</h4>
-            <div>{atob(id)}</div>
+            <div className="update-page-attr-card">
+                <h4>{"name: " + currentCrewmate.name }</h4>
+                <h4>{"value: " + currentCrewmate.value }</h4>
+                <h4>{"type: " + currentCrewmate.type }</h4>
+            </div>
+            <InputForm btnClickFunction="update" btnTxt="Update" id={id} />
+
         </div>
         
     )
