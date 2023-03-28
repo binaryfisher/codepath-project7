@@ -62,7 +62,7 @@ const Gallery = () =>{
                    
                  ))
             ):(
-                "There are no crewmates here!"
+                <h3>There are no crewmates!</h3>
             )}
           
         </div>
