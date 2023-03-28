@@ -8,7 +8,7 @@ import Home from './components/home'
 import Create from './components/create'
 import Gallery from './components/gallery'
 import Update from './components/update'
-
+import Detail from './components/detail'
 
 function App() {
   
@@ -33,6 +33,10 @@ function App() {
 
           <Route path='/'  element={ <NavBar />}>
             <Route path="/gallery/:id/edit" index={false} element={<Update />} />
+          </Route>
+
+          <Route path='/'  element={ <NavBar />}>
+            <Route path="/gallery/:name/:value/:type/detail" index={false} element={<Detail/>} />
           </Route>
         
         </Routes>

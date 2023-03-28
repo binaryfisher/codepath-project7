@@ -42,9 +42,26 @@ h1 {
 }
 
 .home-img{
-  margin-top: 50px;
+  margin-top: 30px;
   border-radius: 8px;
-  width: clamp(200px, 50vw, 600px);
+  width: clamp(200px, 40vw, 600px);
+}
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home-summary{
+  width: clamp(200px, 40vw, 600px);
+  margin-top: 30px;
+  border-radius: 8px;
+  height: 80px;
+  box-shadow: 2px 2px 5px 3px #534f4f;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+}
+.summary-title{
+  font-weight: 600;
 }
 
 .create-img{
@@ -151,16 +168,15 @@ button:hover{
 .gallery-card{
   background-color: #eee7e7;
   box-shadow: 1px 1px 6px 2px #b6adad;
-  padding: 10px;
   width: 180px;
-  height: 180px;
+  height: 200px;
   text-align: left;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  color: black;
 
 }
 .gallery-card-attr{
@@ -236,10 +252,16 @@ button:hover{
 .gallery-card-buttons{
   display: flex;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .gallery-card-button{
   padding: 0;
   width: 80px;
   height: 30px;
   text-align: center;
+}
+.clickable-block{
+ 
+  height: 30px;
+  width: 180px;
 }
