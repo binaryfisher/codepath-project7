@@ -6,6 +6,7 @@ import InputForm from "./inputForm";
 const Update = () =>{
     let {id} = useParams();
     const [currentCrewmate, setCurrentCrewmate] = useState({});
+    const [crewmateBeenUpdated, setCrewmateBeenUpdated] = useState(false)
 
     const handleBtnClick = ()=>{
 
@@ -23,7 +24,7 @@ const Update = () =>{
         fetchData();
       
 
-    },[])
+    },[crewmateBeenUpdated])
 
     return(
         <div className="update-page">
@@ -34,7 +35,7 @@ const Update = () =>{
                 <h4>{"value: " + currentCrewmate.value }</h4>
                 <h4>{"type: " + currentCrewmate.type }</h4>
             </div>
-            <InputForm btnClickFunction="update" btnTxt="Update" id={id} />
+            <InputForm btnClickFunction="update" btnTxt="Update" id={id} stateChange={setCrewmateBeenUpdated} />
 
         </div>
         

@@ -209,9 +209,8 @@ button:hover{
 }
 
 .inform-box-disappear{
-  transform: scaleX(0);
   transform: scaleY(0);
-  transition: all 1s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .update-page{

@@ -28,7 +28,7 @@ const Gallery = () =>{
     const handleDeleteBtn = (event) => {
         let id = event.target.id;
         deleteCrewmate(id);
-        setDeleteACrewmate(false);
+        
     }
 
    const deleteCrewmate = async(id) =>{
@@ -36,7 +36,7 @@ const Gallery = () =>{
             .from("Crewmates")
             .delete()
             .match({"id": id})
-        setDeleteACrewmate(true);    
+        setDeleteACrewmate((currentState) => !currentState);    
    }
 
 

@@ -4,7 +4,7 @@ import { supabase } from "../client";
 
 
 
-const InputForm = ({btnClickFunction, btnTxt, id}) =>{
+const InputForm = ({btnClickFunction, btnTxt, id, stateChange}) =>{
     
     const [name, setName] = useState("");
     const [value, setValue] = useState("");
@@ -47,7 +47,7 @@ const InputForm = ({btnClickFunction, btnTxt, id}) =>{
                 setInformBoxTxt(`Crewmate ${name} has been updated!`)
             }
           
-           
+           stateChange((currentState) => !currentState);
         }
     }
 
